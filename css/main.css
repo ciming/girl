@@ -46,13 +46,12 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  overflow-y: hidden;
 }
 
 .body {
   position: relative;
   width: 6.106667rem;
-  height: 2.426667rem;
+  height: 3.893333rem;
   background-color: #8025a6;
   z-index: 100;
 }
@@ -62,7 +61,7 @@ body {
   position: absolute;
   width: 0;
   height: 0;
-  top: -1.253333rem;
+  top: -1.2rem;
   left: 50%;
   margin-left: -1.16rem;
   border-left: 1.16rem solid transparent;
@@ -73,7 +72,7 @@ body {
 .shirt {
   position: absolute;
   width: 1.84rem;
-  height: 2.426667rem;
+  height: 2.386667rem;
   left: 50%;
   top: 0;
   -webkit-transform: translateX(-50%);
@@ -126,13 +125,17 @@ body {
 .collar::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   width: 0;
   height: 0;
   left: 0;
   border-left: 1.32rem solid transparent;
   border-right: 1.32rem solid transparent;
-  border-bottom: 0.666667rem solid #8025a6;
+  border-bottom: 0.693333rem solid #8025a6;
+}
+
+.hairlines .collar::after {
+  bottom: -0.5px;
 }
 
 .neckband {
@@ -163,19 +166,20 @@ body {
   left: 0;
   -webkit-transform: translate(-50%, -100%);
   transform: translate(-50%, -100%);
-  border-left: 0.44rem solid transparent;
-  border-right: 0.44rem solid transparent;
-  border-top: 0.653333rem solid #f8b1b1;
+  border-left: 0.466667rem solid transparent;
+  border-right: 0.466667rem solid transparent;
+  border-top: 0.72rem solid #f8b1b1;
   z-index: 4;
 }
 
 .line {
   position: absolute;
-  height: 100%;
+  top: 0;
+  bottom: -0.133333rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  width: 0.04rem;
+  width: 1px;
   z-index: 3;
   background-color: #e6daf0;
 }
@@ -400,7 +404,7 @@ body {
 
 .hair-braid div {
   display: block;
-  border-radius: 0.466667rem;
+  border-radius: 0.466667rem 0.466667rem 0 0;
   width: 0.933333rem;
   height: 10.666667rem;
   background-color: #be93ff;
