@@ -1,0 +1,456 @@
+:root {
+	--bgColot: #e8ff3d;
+	--clothesColor: #8025a6;
+	--shirtColor: #fff;
+	--neckbandColor: #c6c7c2;
+	--bowknotColor: #ffaeff;
+	--neckColor: #f8b1b1;
+	--skinColor: #ffefe8;
+	--blusherColor: #ffcdce;
+	--eyeOutColor: #9a4ebb;
+	--eyeInerColor: #8025a6;
+	--hairColor: #eee1ff;
+	--hairColorDark: #be93ff;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	margin: 0 auto;
+}
+html,body{
+	height: 100%;
+}
+body{
+	display: flex;
+	flex-direction:column;
+	justify-content:flex-end;
+	align-items: center;
+	background-color: var(--bgColot);
+	overflow: hidden;
+	margin: 0 auto;
+}
+.wraper{
+	height: 100%;
+	display: flex;
+	flex-direction:column;
+	justify-content:flex-end;
+	align-items: center;
+}
+
+.body{
+	position: relative;
+	width: 458px;/*rem*/
+	height: 182px;/*rem*/
+	background-color: var(--clothesColor);
+	z-index: 100;
+}
+
+.body::before{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: -94px;/*rem*/
+	left: 50%;
+	margin-left: -87px;/*rem*/
+	border-left: 87px solid transparent;/*rem*/
+	border-right: 87px solid transparent;/*rem*/
+	border-bottom: 94px solid var(--clothesColor);/*rem*/
+}
+.shirt{
+	position: absolute;
+	width: 138px;/*rem*/
+	height: 182px;/*rem*/
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+}
+.shirt::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: -182px;/*rem*/
+	border-left: 69px solid transparent;/*rem*/
+	border-right: 69px solid transparent;/*rem*/
+	border-bottom: 260px solid var(--shirtColor);/*rem*/
+	z-index: 1
+}
+.shirt::after{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -13px;/*rem*/
+	border-left: 69px solid transparent;/*rem*/
+	border-right: 69px solid transparent;/*rem*/
+	border-top: 117px solid var(--shirtColor);/*rem*/
+	z-index: 1
+}
+
+.collar{
+	position: absolute;
+	width: 198px;/*rem*/
+	left: 50%;
+	transform: translateX(-50%);
+	height: 92px;/*rem*/
+}
+.collar::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	left: 0;
+	border-left:99px solid transparent;/*rem*/
+	border-right: 99px solid transparent;/*rem*/
+	border-bottom: 443px solid var(--shirtColor);/*rem*/
+}
+.collar::after{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	left: 0;
+	border-left:99px solid transparent;/*rem*/
+	border-right: 99px solid transparent;/*rem*/
+	border-bottom: 50px solid var(--clothesColor);/*rem*/
+}
+
+.neckband{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -67px;/*rem*/
+	border-left:66px solid transparent;/*rem*/
+	border-right: 66px solid transparent;/*rem*/
+	border-top: 98px solid var(--neckbandColor);/*rem*/
+	z-index: 4;
+}
+.neckband::before{
+	content: "";
+	position: absolute; 
+	width: 66px;/*rem*/
+	height: 49px;/*rem*/
+	background-color: var(--neckColor);
+	transform: translate(-50%, -200%);
+}
+.neckband::after{
+	content: "";
+	position: absolute; 
+	left: 0;
+	transform: translate(-50%, -100%);
+	border-left:33px solid transparent;/*rem*/
+	border-right: 33px solid transparent;/*rem*/
+	border-top: 49px solid var(--neckColor);/*rem*/
+	z-index: 4;
+}
+.line{
+	position: absolute;
+	height: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 3px;/*rem*/
+	z-index: 3;
+	background-color: #e6daf0;
+}
+
+.bowknot{
+
+	position: absolute;
+	left: 50%;
+	bottom: 15px ;
+	transform: translateX(-50%);
+	height: 106px;/*rem*/
+	width: 33px;/*rem*/
+	z-index: 5;
+}
+
+.bowknot .band {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+}
+
+.bowknot .band div{
+	height: 100%;
+	width: 9px;/*rem*/
+	background-color: var(--bowknotColor);
+	transform-origin:bottom center;
+}
+.bowknot .band div:first-child{
+	transform: skew(-7deg)
+}
+.bowknot .band div:last-child{
+	transform: skew(7deg)
+}
+
+.bowknot .cell{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 30px;/*rem*/
+	height: 100%;
+}
+.bowknot .cell div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left:15px solid transparent;/*rem*/
+	border-right: 15px solid transparent;/*rem*/
+	border-bottom: 66px solid var(--bowknotColor);/*rem*/
+	transform-origin:top center;
+}
+.bowknot .cell div:first-child{
+	transform: rotate(30deg);
+}
+.bowknot .cell div:last-child{
+	transform: rotate(-30deg);
+}
+.bowknot .cell div::after{
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 12px;/*rem*/
+	transform: translateX(-50%);
+	border-left:8px solid transparent;/*rem*/
+	border-right: 8px solid transparent;/*rem*/
+	border-bottom: 46px solid #fff;
+}
+
+
+.head{
+	position: relative;
+	width: 532px;/*rem*/
+	height: 532px;/*rem*/
+	background-color: var(--skinColor);
+	border-radius:266px ;/*rem*/
+	z-index: 150;
+	margin-bottom: 43px;/*rem*/
+}
+
+.blusher{
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 458px;/*rem*/
+	bottom: 124px;/*rem*/
+}
+.blusher div{
+	width: 100px;/*rem*/
+	height: 30px;/*rem*/
+	border-radius: 50%;
+	background-color: var(--blusherColor);
+}
+.eye{
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 215px;/*rem*/
+	bottom: 156px;/*rem*/
+}
+.eye div{
+	width: 25px;/*rem*/
+	height: 113px;/*rem*/
+	background-color: var(--eyeOutColor);
+}
+.eye div::before{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 50%;
+	background-color: var(--eyeInerColor);
+}
+
+.hair{
+	position: absolute;
+	bottom: 285px;/*rem*/
+	left: 50%;
+	transform: translateX(-50%);
+	width: 650px;/*rem*/
+	height: 325px;/*rem*/
+	
+}
+.hair::after{
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 650px;/*rem*/
+	height: 325px;/*rem*/
+	background-color: var(--hairColor);
+	border-radius: 325px 325px 0 0;/*rem*/
+	z-index: 130
+}
+.hair-side{
+	position: absolute;
+	width: 574px;/*rem*/
+	left: 50%;
+	bottom: -190px;/*rem*/
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: space-between;
+	z-index: 120
+}
+.hair-side::after, .hair-side::before{
+	content: '';
+	display: block;
+	height: 300px;/*rem*/
+	width: 44px;/*rem*/
+	background-color: var(--hairColor);
+	
+}
+.hair-side::before{
+	border-radius: 0 0 0 150px/0 0 0 550px;/*rem*/
+}
+.hair-side::after{
+	border-radius: 0 0  150px 0/0 0  550px 0;
+}
+
+.hair-braid{
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	top: 148px;/*rem*/
+	width: 100%;
+	z-index: 110;
+}
+
+.hair-braid div{
+	display: block;
+	border-radius: 35px;/*rem*/
+	width: 70px;/*rem*/
+	height: 800px;/*rem*/
+	background-color: var(--hairColorDark);
+	overflow: hidden;
+}
+.hair-braid div::before{
+	content: "";
+	width: 30px;/*rem*/
+	display: inline-block;
+	height: 800px;/*rem*/
+	background-color: var(--hairColor);
+}
+.hair-braid div:last-child{
+	text-align: right;
+}
+
+.headwear{
+	position: absolute;
+	top: 152px;/*rem*/
+	width: 574px;/*rem*/
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: space-between;
+	z-index: 200;
+}
+.flower {
+	width: 0;
+	height: 0;
+	position: relative;
+}
+.flower .shadow, .flower .out{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+}
+.flower .shadow div:nth-child(1), .flower .out div:nth-child(1), .flower .inner div:nth-child(1){
+	transform: rotate(72deg);
+}
+.flower .shadow div:nth-child(2), .flower .out div:nth-child(2), .flower .inner div:nth-child(2) {
+	transform: rotate(144deg);
+}
+.flower .shadow div:nth-child(3), .flower .out div:nth-child(3),  .flower .inner div:nth-child(3) {
+	transform: rotate(216deg);
+}
+.flower .shadow div:nth-child(4), .flower .out div:nth-child(4),  .flower .inner div:nth-child(4) {
+	transform: rotate(286deg);
+}
+.flower div{
+	position: absolute;
+	bottom:0;
+	width: 28px;/*rem*/
+	height: 47px;/*rem*/
+	border-radius: 50%;
+	transform-origin: bottom center;
+}
+.flower .shadow{
+	transform: translate(1px,5px);/*rem*/
+}
+.flower .shadow div{
+	background-color: var(--hairColorDark);
+}
+.flower .out{
+	
+}
+.flower .out div{
+	background-color: #ffe2ff;
+}
+
+.flower .inner{
+	transform: scale(.8)
+}
+.flower .inner div{
+	background-color: #fff;
+}
+
+.cap{
+	position: absolute;
+	top: -190px;/*rem*/
+	left: 75px;/*rem*/
+	z-index: 300;
+	transform-origin: bottom center;
+	transform: rotate(-10deg);
+}
+
+.cap-bottom{
+	width: 266px;/*rem*/
+	height: 54px;/*rem*/
+	background-color: #fff;
+	margin: 0 auto;
+}
+.cap-body{
+	width: 130px;/*rem*/
+	height: 0;
+	border-bottom: 146px solid #fb402f;/*rem*/
+	border-left: 26px solid transparent;/*rem*/
+	border-right: 26px solid transparent;/*rem*/
+	margin: 0 auto;
+}
+.cap-header{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform-origin: top center;
+	transform: translateX(-50%) skew(-227deg);
+	border-top: 90px solid #d55f55;/*rem*/
+	border-left: 65px solid transparent;/*rem*/
+	border-right: 65px solid transparent;/*rem*/
+}
+.cap-ball{
+	position: absolute;
+	width: 34px;/*rem*/
+	height: 34px;/*rem*/
+	border-radius: 50%;
+	background-color: #fff;
+	left: 20px;/*rem*/
+	top: 64px;/*rem*/
+
+}
